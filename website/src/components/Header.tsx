@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { navItems } from "../config";
+import { designer, navItems } from "../config";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -8,8 +8,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/80 bg-canvas/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-site items-center justify-between gap-4 px-4 py-4 sm:px-6">
-        <a href="#hero" className="font-display text-xl font-semibold tracking-tight sm:text-2xl">
-          [ Имя · Fashion ]
+        <a
+          href="#hero"
+          className="group flex items-baseline gap-2 font-display text-xl font-semibold tracking-tight sm:text-2xl"
+          title={designer.fullName}
+        >
+          <span className="rounded border border-accent/30 bg-accent-light/80 px-2 py-0.5 text-lg tracking-[0.15em] text-accent sm:text-xl">
+            {designer.initials}
+          </span>
+          <span className="hidden text-base font-normal text-ink-muted sm:inline">{designer.role}</span>
         </a>
 
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Основное меню">
