@@ -10,13 +10,11 @@ export function Header() {
       <div className="mx-auto flex max-w-site items-center justify-between gap-4 px-4 py-4 sm:px-6">
         <a
           href="#hero"
-          className="group flex items-baseline gap-2 font-display text-xl font-semibold tracking-tight sm:text-2xl"
+          className="font-display text-2xl font-semibold tracking-[0.2em] text-ink sm:text-3xl"
           title={designer.fullName}
+          aria-label={designer.siteName}
         >
-          <span className="rounded border border-accent/30 bg-accent-light/80 px-2 py-0.5 text-lg tracking-[0.15em] text-accent sm:text-xl">
-            {designer.initials}
-          </span>
-          <span className="hidden text-base font-normal text-ink-muted sm:inline">{designer.role}</span>
+          {designer.siteName}
         </a>
 
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Основное меню">
